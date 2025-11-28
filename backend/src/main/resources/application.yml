@@ -5,3 +5,5 @@ spring:
   profiles:
     active: dev
 
+jwt:
+  secret: "J!IO@EY@*#(j(@*#E(*@U#98@e@*@(&U#@Eeu!U@!@2uW)(!u98u1:"
