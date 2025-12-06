@@ -1,38 +1,36 @@
-package com.application.backend.controller;
+package com.application.backend.service;
+
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import com.application.backend.projection.UserBasicView;
 import com.application.backend.projection.UserProfileView;
 import com.application.backend.projection.UserReportView;
-import com.application.backend.service.UserService;
+import com.application.backend.repo.UserRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-@RestController
-public class UserController {
+
+@Service
+public class UserService {
 
     @Autowired
-    private UserService userService;
+    private UserRepo userRepo;
 
     // --- 1. Get basic user info ---
-    @GetMapping("/users/basic")
     public List<UserBasicView> getAllUsersBasic() {
-        return userService.getAllUsersBasic();
+        return userRepo.findAllProjectedBy();
     }
 
     // --- 2. Get user + profile details ---
-    @GetMapping("/users/profiles")
     public List<UserProfileView> getAllUserProfiles() {
-        return userService.getAllUserProfiles();
+        return userRepo.getUserProfileDetails();
     }
 
     // --- 3. Get user report with functions ---
-    @GetMapping("/users/report")
     public List<UserReportView> getUserReport() {
-        return userService.getUserReport();
+        return userRepo.getUserReport();
     }
 }
