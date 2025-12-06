@@ -13,9 +13,3 @@ spring:
       properties:
           hibernate:
             dialect: org.hibernate.dialect.PostgreSQLDialect
-
-upload:
-  path: uploads
-
-frontend:
-  url: http://localhost:3000
