@@ -5,5 +5,17 @@ spring:
   profiles:
     active: dev
 
+  mail:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    host: smtp.gmail.com
+    username: karthikeyan.aas@gmail.com
+    password: sbbh oaxk ngxl tfqy
+    port: '587'
+
 jwt:
   secret: "J!IO@EY@*#(j(@*#E(*@U#98@e@*@(&U#@Eeu!U@!@2uW)(!u98u1:"
